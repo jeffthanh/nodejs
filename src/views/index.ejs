@@ -9,7 +9,47 @@
 </head>
 
 <body>
-    <h1>thanhf depj trai</h1>
+
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>UserName</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=0 ; i < dataUser.length ; i++) { %>
+                <tr>
+                    <td>
+                        <%= dataUser[i].id %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].username %>
+                    </td>
+                    <td>
+                        <%= dataUser[i].password %>
+                    </td>
+                    <td>
+                        <button type="button">Detail</button>
+                        <button type="button">Delete</button>
+                        <button type="button">Edit</button>
+                    </td>
+                </tr>
+
+                <% } %>
+
+        </tbody>
+
+    </table>
+
 </body>
 
 </html>

@@ -2,6 +2,8 @@ const express = require('express');
 const configViewEngine = require('./configs/viewEngine');
 const dotenv = require("dotenv");
 const initWebRouter = require('./route/web');
+const connection = require('./configs/connectDB')
+
 dotenv.config();
 
 const app = express();
