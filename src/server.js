@@ -2,12 +2,16 @@ const express = require('express');
 const configViewEngine = require('./configs/viewEngine');
 const dotenv = require("dotenv");
 const initWebRouter = require('./route/web');
-const connection = require('./configs/connectDB')
+const connection = require('./configs/connectDB');
 
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 8080; // Sử dụng PORT từ biến môi trường hoặc mặc định là 3000
+const port = process.env.PORT || 8080;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 configViewEngine(app);
 
 initWebRouter(app);
